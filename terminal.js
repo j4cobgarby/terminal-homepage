@@ -85,7 +85,7 @@ function ls() {
     println('total ' + Object.keys(projects).length)
     for (var p in projects) {
         if (projects.hasOwnProperty(p)) {
-            println("-r--r--r-- 1 j4cobgarby " + p)
+            println("dr--r--r-- 1 j4cobgarby " + p)
         }
     }
 }

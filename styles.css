@@ -1,0 +1,19 @@
+* {
+    font-size: 25px;
+    font-family: 'PT Mono', monospace;
+
+    margin: 0;
+    padding: 0;
+}
+
+pre, span {
+    line-height: 30px;
+}
+
+body {
+    padding: 100px;
+}
+
+input {
+    border: 0;
+}

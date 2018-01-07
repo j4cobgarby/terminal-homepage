@@ -1,5 +1,5 @@
 * {
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'PT Mono', monospace;
 
     margin: 0;
@@ -7,7 +7,7 @@
 }
 
 pre, span {
-    line-height: 30px;
+    line-height: 25px;
 }
 
 body {

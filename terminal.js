@@ -23,13 +23,18 @@ function init() {
     cmdline.autofocus = true
 
     println("\nWelcome to my website!\nType 'help' to list all possible commands!\n")
-
-    cmdline.onkeypress = function(e) {
+    document.body.addEventListener("keydown", function(e) {
         if (!e) e = window.event;
-        var keycode = e.keycode || e.which;
-        if (keycode == '13') {
-            termout.innerHTML += prompt + "&nbsp;" + cmdline.value + '<br>'
-            var args = cmdline.value.split(" ")
+        var key = e.key
+        if ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()-=_+[]{}\\|;:'\",.<>/? ".includes(key)) {
+            cmdline.innerHTML += key
+        }
+        if (key == 'Backspace') {
+            cmdline.innerHTML = cmdline.innerHTML.substring(0, cmdline.innerHTML.length - 1)
+        }
+        if (key == 'Enter') {
+            termout.innerHTML += prompt + "&nbsp;" + cmdline.innerHTML + '<br>'
+            var args = cmdline.innerHTML.split(" ")
             switch (args[0]) {
                 case "": break
                 case "help":
@@ -51,10 +56,10 @@ function init() {
                     println("bash: " + args[0] + ": command not found. Type 'help' for possible commands.")
                     break
             }
-            cmdline.value = ''
+            cmdline.innerHTML = ''
         }
         window.scrollTo(0, document.body.scrollHeight);
-    }
+    })
 }
 
 function println(s) {

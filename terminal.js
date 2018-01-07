@@ -18,6 +18,7 @@ var projects = {
 function init() {
     termout = document.getElementById('term')
     cmdline = document.getElementById('cmdline')
+    cmdline.focus()
     document.getElementById('prompt').innerHTML = prompt
     cmdline.autofocus = true
 
